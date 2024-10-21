@@ -11,12 +11,14 @@ the -ss argument (defaults to 20 bases).
 """
 
 def parse_args():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="A script to prepare a fasta file input for pysster processing")
     parser.add_argument('-fi', '--fasta-in', type=str, default=None)
     parser.add_argument('-sl', '--split-length', type=int, default=400)
     parser.add_argument('-ss', '--slide-size', type=int, default=20)
     parser.add_argument('-fo', '--fasta-out', type=str, default=None)
     args = parser.parse_args()
+    if not args.fasta_in:
+        raise FileNotFoundError("No inptu fasta provided.")
     return args
 
 def read_fasta(file_path):

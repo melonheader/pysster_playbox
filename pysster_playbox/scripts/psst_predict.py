@@ -7,7 +7,7 @@ from pysster import utils
 Simple script to run pysster predict over a selected sequence split.
 """
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description='Simple script to run pysster predict over a selected sequence split')
 parser.add_argument('-m', '--model-path', type=str, default=None)
 parser.add_argument('-o', '--output-dir', default='.')
 parser.add_argument('-s', '--suffix', default='')
